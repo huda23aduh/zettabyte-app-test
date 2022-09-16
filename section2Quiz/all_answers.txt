@@ -1,0 +1,50 @@
+Zettabyte
+
+Js1
+function result(numbers) {
+    // Your Code Here
+    return Math.max(...numbers);
+}
+
+
+Js2
+function result(reports) {
+  // Your Code Here
+  return Object.entries(reports).map(([date, profit]) => ({date,profit}));
+}
+
+
+Js3
+function result(data) {
+  // write your code here
+    return  Object.entries(data)
+        .sort(([,a],[,b]) => a-b)
+        .reduce((r, [k, v]) => ({ ...r, [k]: v*3 }), {});
+    
+}
+
+
+
+Js4
+function result() {
+  // write your code here
+  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+   var d = new Date();
+ d.setDate(d.getDate()-4);
+ return weekday[d.getDay()]; 
+}
+
+
+Js5
+function result(students, groups) {
+  // your code here
+  let nItemPerArr = students.length % groups;
+  var arr = [];
+  while (students.length > 0)
+    arr.push(students.splice(0, nItemPerArr));
+
+    arr.sort((a, b) => a.firstName)
+
+    return arr;
+}
+
