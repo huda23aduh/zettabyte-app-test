@@ -1,0 +1,7 @@
+{
+  "env": {
+    "MONGO_USER": "zettabyte-user",
+    "MONGO_PASSWORD": "12341234",
+    "MONGO_DB": "zettabyte_app-db"
+  }
+}
