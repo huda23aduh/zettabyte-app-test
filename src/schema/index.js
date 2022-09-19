@@ -9,12 +9,13 @@ module.exports = buildSchema(`
     title: String!
     body: String!
     createdAt: String!
-    commentsData: Comment 
+    comments: [Comment] 
   }
   type Comment {
-    _id: ID!
-    text: String!
-    createdAt: String!
+    _id: ID
+    text: String
+    createdAt: String
+    postId: ID
   }
   input PostType {
     title: String!
@@ -22,17 +23,20 @@ module.exports = buildSchema(`
   }
   input CommentType {
     text: String!
-    post: ID
+    postId: ID
   }
   type RootQuery {
     posts: [Post!]
     post(_id: String!): Post!
+    commentsOfAPost(_id: String!): [Comment!]
   }
   type Mutation {
     createPost(Post:PostType): Post,
     deletePost(_id: String): Post,
     updatePost(_id: String, title: String, body: String): String,
     addComment(Comment:CommentType): Comment,
+    updateComment(_id: String, text: String): String,
+    deleteComment(_id: String): String,
   }
   schema {
     query: RootQuery
